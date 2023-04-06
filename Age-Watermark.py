@@ -37,7 +37,9 @@ def process_image(image_path, output_dir):
     # 计算天数、月数和年数 
     delta = date_taken - target_date
     days = delta.days
-    if days <= 100:
+    if days < 0:
+        text = '来自未来的照片'
+    elif days <= 100:
         text = f'{days} 天'
     elif days < 365:
         months = days // 30
@@ -65,9 +67,9 @@ def process_image(image_path, output_dir):
     font = ImageFont.truetype('msyh.ttc', 45)
     text_bbox = font.getbbox(text)
     text_width, text_height = text_bbox[2], text_bbox[3]
-    x = width - text_width - 10
-    y1 = height - text_height * 2 - 10
-    y2 = height - text_height - 10
+    x = width - text_width - 80 #右侧预留80像素
+    y1 = height - text_height * 2 - 50 #下侧预留50像素
+    y2 = height - text_height - 50
     draw.text((x, y1), str(date_taken), fill='magenta', font=font)
     draw.text((x, y2), text, fill='magenta', font=font)
     # 将处理后的图像保存到指定的输出目录
