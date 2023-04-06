@@ -82,7 +82,7 @@ def process_images(input_dir, output_dir):
                 process_image(image_path, output_dir)
 
 #指定要处理的图片所在目录
-input_dir = 'D:\\tset\\'
+input_dir = 'D:\\test\\'
 #指定处理完的图片存储目录
-output_dir = 'D:\\tset\\1\\'
+output_dir = 'D:\\test\\已处理\\'
 process_images(input_dir, output_dir)
