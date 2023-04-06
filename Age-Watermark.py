@@ -85,4 +85,6 @@ def process_images(input_dir, output_dir):
 input_dir = 'D:\\test\\'
 #指定处理完的图片存储目录
 output_dir = 'D:\\test\\已处理\\'
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
 process_images(input_dir, output_dir)
