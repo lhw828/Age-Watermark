@@ -33,7 +33,7 @@ def process_image(image_path, output_dir):
     if not date_taken:
         return
 # 指定目标日期（例如小孩的生日）
-    target_date = datetime.strptime('2020-03-21', '%Y-%m-%d').date()
+    target_date = datetime.strptime('2010-05-11', '%Y-%m-%d').date()
     # 计算天数、月数和年数 
     delta = date_taken - target_date
     days = delta.days
@@ -86,7 +86,7 @@ def process_images(input_dir, output_dir):
 #指定要处理的图片所在目录
 input_dir = 'D:\\test\\'
 #指定处理完的图片存储目录
-output_dir = 'D:\\test\\1\\'
+output_dir = 'D:\\test\\已处理\\'
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 process_images(input_dir, output_dir)
