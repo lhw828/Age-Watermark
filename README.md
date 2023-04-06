@@ -15,7 +15,7 @@
 
 程序已添加注释，请按实际需要自行更改。
 
-警告：https://github.com/lhw828/Age-Watermark/releases里面的exe文件仅仅是个示例，
+警告：https://github.com/lhw828/Age-Watermark/releases 里面的exe文件仅仅是个示例，
 由于默认时间是2010-05-11，没有指定你自己的起始时间，水印显示的间隔时间将是错误的。
 
 Add watermarks to photos in batches. The watermark content is the date 
