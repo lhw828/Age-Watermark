@@ -7,6 +7,14 @@
 岁，零几天；
 天数如果为零，则显示几岁几个月。
 
+
+默认生日：2010-05-11
+默认图片目录：D:\\test\\
+处理后图片默认存储目录：D:\\test\\已处理\\
+默认字体：微软雅黑，字号：45，颜色：magenta
+
+程序已添加注释，请按实际需要自行更改。
+
 Add watermarks to photos in batches. The watermark content is the date 
 the photo was taken and the interval between the date the photo was 
 taken and a specified time. For example, if the specified time is the 
