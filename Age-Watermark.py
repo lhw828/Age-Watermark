@@ -2,6 +2,7 @@ from PIL import Image, ImageDraw, ImageFont
 from PIL.ExifTags import TAGS
 from datetime import datetime, timedelta
 import os
+import msvcrt #只适用于Windows程序实现按任意键退出，Linux和macOS需要sys,tty,termios和其他的代码
 
 # 获取图像的 EXIF 数据
 def get_exif_data(image):
@@ -31,9 +32,9 @@ def process_image(image_path, output_dir):
     date_taken = get_date_taken(image)
     if not date_taken:
         return
-    # 指定目标日期（例如小孩的生日）
-    target_date = datetime.strptime('2010-05-11', '%Y-%m-%d').date()
-    # 计算天数、月数和年数    
+# 指定目标日期（例如小孩的生日）
+    target_date = datetime.strptime('2020-03-21', '%Y-%m-%d').date()
+    # 计算天数、月数和年数 
     delta = date_taken - target_date
     days = delta.days
     if days <= 100:
@@ -60,7 +61,7 @@ def process_image(image_path, output_dir):
     # 在图像上添加文本
     width, height = image.size
     draw = ImageDraw.Draw(image)
-    #此处指定字体和字号，默认微软雅黑，45号 
+    # 此处指定字体和字号，默认微软雅黑，45号 
     font = ImageFont.truetype('msyh.ttc', 45)
     text_bbox = font.getbbox(text)
     text_width, text_height = text_bbox[2], text_bbox[3]
@@ -77,14 +78,18 @@ def process_image(image_path, output_dir):
 def process_images(input_dir, output_dir):
     for root, dirs, files in os.walk(input_dir):
         for file in files:
-            if file.endswith(('.jpg', '.jpeg')):
+            if file.endswith(('.jpg', '.jpeg', '.JPG', '.JPEG')):
                 image_path = os.path.join(root, file)
+                print(f"正在处理图片: {file}")
                 process_image(image_path, output_dir)
 
 #指定要处理的图片所在目录
 input_dir = 'D:\\test\\'
 #指定处理完的图片存储目录
-output_dir = 'D:\\test\\已处理\\'
+output_dir = 'D:\\test\\1\\'
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 process_images(input_dir, output_dir)
+
+print("已处理完毕，按任意键退出")
+msvcrt.getch()
