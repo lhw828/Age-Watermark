@@ -19,18 +19,18 @@
 用法：
 
 将Age-Watermark-1.3.exe文件放到需要处理的图片文件夹，双击运行，手动输入小孩生日后，
-程序将自动处理当前文件夹及其子目录中所有图片，并按原目录结构将处理后的图片同意保存至D:\已处理\文件夹。
+程序将自动为当前文件夹及其子目录中所有图片添加水印，水印内容包含：1、照片拍摄时间；
+2、照片拍摄时小孩的年龄（根据程序启动时手动指定的生日计算得来），按原目录结构将处
+理后的图片同意保存至 D:\已处理\ 文件夹。
 
-Add watermarks to photos in batches. The watermark content is the date 
-the photo was taken and the interval between the date the photo was 
-taken and a specified time. For example, if the specified time is the 
-child’s date of birth, the program will automatically calculate the 
-child’s age on the day the photo was taken. If it is less than or 
-equal to 100 days, it will be displayed directly as days; if it is 
-more than 100 days and less than 1 year old, it will be displayed as 
-several months and several days (if the number of days is zero, only 
-several months will be displayed); if it is more than 1 year old, it 
-will be displayed as several years old, several months and several days. 
-If the number of months is zero, only a few years old and a few days will 
-be displayed; if the number of days is zero, only a few years old and a 
-few months will be displayed.
+Note: The code for this program was partially provided by New Bing. I requested the functionality and New Bing provided the code, with iterative improvements until it became functional. Please feel free to refine and add more features.
+
+Program Functionality:
+Batch adding watermarks to images with the watermark content being the date the photo was taken and the time interval between the date of the photo and a specified time. For example, if the specified time is the child's birthdate, the program will automatically calculate the age of the child on the day the photo was taken. If the age is less than or equal to 100 days, it will be displayed as the number of days. If the age is over 100 days but still under 1 year old, it will display as the number of months and days (if the number of days is zero, only the number of months will be displayed). If the child is over 1 year old, it will display as the number of years, months, and days (if the number of months is zero, only the number of years and days will be displayed). If the number of days is zero, it will display as the number of years and months.
+
+Default font: Microsoft YaHei, font size: 45, color: magenta.
+
+The program has been commented in the code, so please modify it according to your actual needs.
+
+Usage:
+Place the Age-Watermark-1.3.exe file in the folder containing the images to be processed, double-click to run, manually enter the child's birthdate, and the program will automatically add watermarks to all images in the current folder and its subdirectories. The watermark content includes: 1. the date the photo was taken; 2. the age of the child at the time the photo was taken (calculated based on the manually specified birthdate when the program started). The processed images will be saved in the D:\Processed\ folder while maintaining the original directory structure.
