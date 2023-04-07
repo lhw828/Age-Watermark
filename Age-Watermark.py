@@ -41,31 +41,31 @@ def process_image(image_path, output_dir, target_date):
     if days < 0:
         text = f'{formatted_date}之前的照片'
     elif days <= 100:
-        text = f'{days} 天'
+        text = f'{days}天'
     elif days < 365:
         months = days // 30
         days = days % 30
         if days == 0:
-            text = f'{months} 个月'
+            text = f'{months}个月'
         else:
-            text = f'{months} 个月 {days} 天'
+            text = f'{months}个月{days}天'
     else:
         years = days // 365
         months = (days % 365) // 30
         days = (days % 365) % 30
         if months == 0 and days == 0:
-            text = f'{years} 岁'
+            text = f'{years}岁'
         elif months == 0:
-            text = f'{years} 岁零 {days} 天'
+            text = f'{years}岁零{days}天'
         elif days == 0:
-            text = f'{years} 岁 {months} 个月'
+            text = f'{years}岁{months}个月'
         else:
-            text = f'{years} 岁 {months} 个月 {days} 天'
+            text = f'{years}岁{months}个月{days}天'
     # 在图像上添加文本
     width, height = image.size
     draw = ImageDraw.Draw(image)
-    # 此处指定字体和字号，默认微软雅黑，45号 
-    font = ImageFont.truetype('msyh.ttc', 45)
+    # 此处指定字体和字号，默认微软雅黑，72号 
+    font = ImageFont.truetype('msyh.ttc', 72)
     text_bbox = font.getbbox(text)
     text_width, text_height = text_bbox[2], text_bbox[3]
     x = width - text_width - 80 #右侧预留80像素
