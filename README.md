@@ -6,17 +6,17 @@
 批量给图片增加水印，水印内容为照片拍摄日期，以及拍摄日期到指定时间的间隔时间，主要用于显示人物年龄。例如指定时间为小孩的出生日期，程序会自动计算照片拍摄当天小孩的年纪。
 - 如果小于等于100天，直接显示为天数； 
 - 100天以上，1岁以下显示几个月几天（如果天数为零，则只显示几个月）； 
-- 一岁以后显示几岁几个月几天，其中月数为零，则不显示月数，只显示几 岁，零几天； 
-- 天数如果为零，则显示几岁几个月。 
-- 默认字体：微软雅黑，字号：72，颜色：magenta
+- 一岁以后显示几岁几个月几天，其中月数为零，则不显示月数，只显示几 岁，零几天，天数如果为零，则显示几岁几个月。 
+- 默认字体：微软雅黑，字号：自适应，颜色：magenta
 - 程序已添加注释，请按实际需要自行更改。
 
 ### 用法：
 
-将Age-Watermark-1.3.exe文件放到需要处理的图片文件夹，双击运行，手动输入小孩生日后， 程序将自动为当前文件夹及其子目录中所有图片添加水印。
+将Age-Watermark.exe文件放到需要处理的图片文件夹，双击运行，手动输入指定日期，如小孩生日后， 程序将自动为当前文件夹及其子目录中所有图片添加水印。
 水印内容包含：
 - 照片拍摄时间；
-- 照片拍摄时小孩的年龄（根据程序启动时手动指定的生日计算得来），按原目录结构将处 理后的图片同意保存至 D:\已处理\ 文件夹。
+- 照片拍摄时小孩的年龄（根据程序启动时手动指定的生日计算得来）；
+- 已处理文件按原目录结构将处理后的图片统一保存至 D:\已处理\ 文件夹。
 
 ### Note: 
 
@@ -27,9 +27,8 @@ The code for this program was partially provided by New Bing. I requested the fu
 Batch adding watermarks to images with the watermark content being the date the photo was taken and the time interval between the date of the photo and a specified time. For example, if the specified time is the child's birthdate, the program will automatically calculate the age of the child on the day the photo was taken.
 - If the age is less than or equal to 100 days, it will be displayed as the number of days. 
 - If the age is over 100 days but still under 1 year old, it will display as the number of months and days (if the number of days is zero, only the number of months will be displayed). 
-- If the child is over 1 year old, it will display as the number of years, months, and days (if the number of months is zero, only the number of years and days will be displayed).
-- If the number of days is zero, it will display as the number of years and months.
-- Default font: Microsoft YaHei, font size: 45, color: magenta.
+- If the child is over 1 year old, it will display as the number of years, months, and days (if the number of months is zero, only the number of years and days will be displayed).If the number of days is zero, it will display as the number of years and months.
+- Default font: Microsoft YaHei; Font size: adaptive; Color: magenta.
 - The program has been commented in the code, so please modify it according to your actual needs.
 
 ### Usage: 
@@ -37,4 +36,5 @@ Place the Age-Watermark-1.3.exe file in the folder containing the images to be p
 
 The watermark content includes: 
 - the date the photo was taken; 
-- the age of the child at the time the photo was taken (calculated based on the manually specified birthdate when the program started). The processed images will be saved in the D:\已处理\ folder while maintaining the original directory structure.
+- The age of the child at the time of the photo shoot is calculated based on the manually specified birthday when the program starts.
+- The processed files will be saved to the D:\已处理\ folder following the original directory structure.
