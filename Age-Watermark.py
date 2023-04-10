@@ -70,10 +70,9 @@ def process_image(image_path, output_dir, target_date, font=None):
         text_bbox = font.getbbox(text)
         text_width, text_height = text_bbox[2], text_bbox[3]
         x = img_width - text_width - 80 #右侧预留80像素
-        y1 = img_height - text_height * 2 - 50 #下侧预留50像素
-        y2 = img_height - text_height - 50
-        draw.text((x, y1), str(date_taken), fill='magenta', font=font)
-        draw.text((x, y2), text, fill='magenta', font=font)
+        y = img_height - text_height * 2 - 50 #下侧预留50像素
+        draw.text((x + text_width//2, y + text_height//2), str(date_taken), fill='magenta', anchor='mm', font=font)
+        draw.text((x + text_width//2, y + text_height*3//2), text, fill='magenta', anchor='mm', font=font)
         # 将处理后的图像保存到指定的输出目录
         output_path = os.path.join(output_dir, os.path.relpath(image_path, input_dir))
         output_dir = os.path.dirname(output_path)
@@ -99,5 +98,7 @@ if __name__ == '__main__':
                 print(f"正在处理图片: {file}")
                 process_image(image_path, output_dir, target_date)
 
-    print("完毕，已处理的图片存放在“D:\已处理”文件夹，请查看。按任意键退出")
-    msvcrt.getch() 
+    print("处理完毕，按任意键退出本程序并打开 D:\\已处理")
+    msvcrt.getch()
+
+os.system('start "" "D:\\已处理"')
