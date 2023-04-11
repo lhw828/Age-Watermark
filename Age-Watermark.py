@@ -69,8 +69,8 @@ def process_image(image_path, output_dir, target_date, font=None):
             font = ImageFont.truetype('msyh.ttc', size=font_size) # 此处指定字体为雅黑
         text_bbox = font.getbbox(text)
         text_width, text_height = text_bbox[2], text_bbox[3]
-        x = img_width - text_width - 80 #右侧预留80像素
-        y = img_height - text_height * 2 - 50 #下侧预留50像素
+        x = img_width - text_width - 200 # 右侧预留200像素，否则天数较小情况下日期显示不全
+        y = img_height - text_height * 2 - 50 # 下侧预留50像素
         draw.text((x + text_width//2, y + text_height//2), str(date_taken), fill='magenta', anchor='mm', font=font)
         draw.text((x + text_width//2, y + text_height*3//2), text, fill='magenta', anchor='mm', font=font)
         # 将处理后的图像保存到指定的输出目录
