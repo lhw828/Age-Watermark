@@ -77,7 +77,8 @@ def process_image(image_path, output_dir, target_date, font=None):
         output_path = os.path.join(output_dir, os.path.relpath(image_path, input_dir))
         output_dir = os.path.dirname(output_path)
         os.makedirs(output_dir, exist_ok=True)
-        image.save(output_path, quality=95)
+        exif_info = image.info.get('exif') # 获取原图像的EXIF信息
+        image.save(output_path, quality=95, exif=exif_info) # 将原图像的EXIF信息赋值给新保存的图像
 
 if __name__ == '__main__':
     while True:
