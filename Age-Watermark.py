@@ -42,6 +42,8 @@ def process_image(image_path, output_dir, target_date, font=None):
         days = delta.days
         if days < 0:
             text = f'{formatted_date}之前的照片'
+        elif days == 0:
+            text = '我出生啦'
         elif days <= 100:
             text = f'{days}天'
         elif days < 365:
